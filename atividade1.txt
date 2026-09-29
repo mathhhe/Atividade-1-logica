@@ -1,0 +1,178 @@
+1-
+
+import java.util.Scanner;
+public class atividade {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+
+        System.out.println("Qual a idade da primeira irma?");
+        int idade1 = ler.nextInt();
+        System.out.println("Qual a idade da segunda irma?");
+        int idade2 = ler.nextInt();
+        System.out.println("Qual a idade da terceira irma?");
+        int idade3 = ler.nextInt();
+
+        int idadeDoMeio = 0;
+        if (idade1 <= idade2 && idade1 <= idade3) {
+            if (idade2 <= idade3) {
+                idadeDoMeio = idade2;
+            } else {
+                idadeDoMeio = idade3;
+            }
+        } else if (idade2 <= idade1 && idade2 <= idade3) {
+            if (idade1 <= idade3) {
+                idadeDoMeio = idade1;
+            } else {
+                idadeDoMeio = idade3;
+            }
+        } else {
+            if (idade1 <= idade2) {
+                idadeDoMeio = idade1;
+            } else {
+                idadeDoMeio = idade2;
+            }
+        }
+
+        System.out.println("A idade da irma do meio (camila) e: " + idadeDoMeio);
+    }
+    
+}
+
+2-
+import java.util.Scanner;
+public class atividade {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+        int arrayresultado[] = new int[6];
+        int quantidadeVitorias = 0;
+        
+
+        System.out.println("Digite o resulta dos jogos desse aluno(V = Vitória, P = Derrota): ");
+
+        for (int i = 0; i < 6; i++) {
+            String resultado = ler.nextLine();
+            if (resultado.equalsIgnoreCase("V")) {
+                arrayresultado[i] = 1;
+            } else if (resultado.equalsIgnoreCase("P")) {
+                arrayresultado[i] = 0;
+            } else {
+                System.out.println("Resultado inválido. Digite novamente.");
+                i--;
+            }
+            if (arrayresultado[i] == 1) {
+                quantidadeVitorias++;
+            }
+
+        }
+        if(quantidadeVitorias >= 5 && quantidadeVitorias <= 6){
+            System.out.println("grupo 1!");
+        } else if(quantidadeVitorias >= 3 && quantidadeVitorias <= 4){
+            System.out.println("grupo 2!");
+        } else if(quantidadeVitorias >= 1 && quantidadeVitorias <= 2){
+            System.out.println("grupo 1!");
+        } else{
+            System.out.println("grupo -1!");
+        }
+    }
+       
+}
+
+3-
+import java.util.Scanner;
+public class atividade {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Digite um numero inteiro (S deve ser menor que A): ");
+        int numeroS = ler.nextInt();
+        System.out.println("Digite outro numero inteiro(A deve ser menor que B): ");
+        int numeroA = ler.nextInt();
+        System.out.println("Digite outro numero inteiro(B deve ser maior que A): ");
+        int numeroB = ler.nextInt();
+
+        int quantidade = 0;
+
+        for (int i = numeroA; i <= numeroB; i++) {
+           int primeirodigito = i / 10;
+           int segundodigito = i % 10;
+           if (primeirodigito + segundodigito == numeroS) {
+               quantidade++;
+           }
+        }
+
+        System.out.println("Quantidade de numeros que satisfazem a condicao: " + quantidade);
+
+
+    }
+       
+}
+
+4-
+import java.util.Scanner;
+public class atividade {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Qual o domino que voce quer: ");
+        double tipodomino = ler.nextDouble();
+
+        double resultado = (tipodomino + 1) * ((tipodomino + 2) / 2);
+
+        System.out.println("O resultado é: " + resultado);
+
+    }
+       
+}
+
+5-
+import java.util.Scanner;
+public class atividade {
+    public static void main(String[] args) {
+
+        int array1[] = new int[3];
+        int array2[] = new int[3];
+
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Dados da charrete 1");
+        
+            
+            System.out.println("Digite o numero do cavalo ");
+            array1[0] = ler.nextInt();
+            ler.nextLine();
+            System.out.println("Digite a distancia ate a linha de chegada");
+            array1[1] = ler.nextInt();
+            ler.nextLine(); 
+            System.out.println("Digite a velocidade do cavalo ");
+            array1[2] = ler.nextInt();
+            ler.nextLine(); 
+        
+            
+            System.out.println("Dados da charrete 2");
+            
+            System.out.println("Digite o numero da charrete");
+            array2[0] = ler.nextInt();
+            ler.nextLine();
+            System.out.println("Digite a distancia ate a linha de chegada");
+            array2[1] = ler.nextInt();
+            ler.nextLine();
+            System.out.println("Digite a velocidade da charrete"); 
+            array2[2] = ler.nextInt();
+            ler.nextLine();
+        
+
+            double tempo1 = array1[1] / (double) array1[2];
+            double tempo2 = array2[1] / (double) array2[2];
+
+            if (tempo1 < tempo2) {
+                System.out.println(array1[0]);
+            } else {
+                System.out.println(array2[0]);
+            }
+        
+    }
+}
+
+
+
